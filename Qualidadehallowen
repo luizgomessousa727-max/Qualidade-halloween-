@@ -1,0 +1,42 @@
+-- ==========================================
+-- AMBIENTE HALLOWEEN DE ALTA QUALIDADE & NITIDEZ
+-- ==========================================
+
+local Lighting = game:GetService("Lighting")
+
+-- 1. Iluminação mais clara e limpa (para veres tudo perfeitamente)
+Lighting.ClockTime = 21 -- Início da noite (luar bonito e visível)
+Lighting.Brightness = 2.0 -- Muito mais claro que as versões anteriores
+Lighting.Ambient = Color3.fromRGB(75, 95, 130)     -- Tom azulado suave e claro nas sombras
+Lighting.OutdoorAmbient = Color3.fromRGB(55, 75, 105)
+
+-- 2. Sem nevoeiro pesado para o mapa ficar totalmente limpo e nítido
+Lighting.FogEnd = 10000 
+Lighting.FogColor = Color3.fromRGB(40, 50, 70)
+
+-- 3. Correção de Cor (O segredo da qualidade "TikTok/Cinematográfica")
+local colorCorrection = Instance.new("ColorCorrectionEffect")
+colorCorrection.Name = "HalloweenHighQuality"
+colorCorrection.Saturation = -0.15   -- Mantém as cores vivas, mas com um toque frio e elegante
+colorCorrection.Contrast = 0.30     -- Destaca os detalhes e dá profundidade profissional
+colorCorrection.TintColor = Color3.fromRGB(225, 240, 255) -- Azul gelo subtil e sofisticado
+colorCorrection.Parent = Lighting
+
+-- 4. Efeito Bloom (Faz abóboras, velas e luzes brilharem com alta qualidade)
+local bloom = Instance.new("Bloom")
+bloom.Name = "SpookyBloom"
+bloom.Intensity = 0.45
+bloom.Size = 24
+bloom.Threshold = 0.75
+bloom.Parent = Lighting
+
+-- 5. Atmosfera leve apenas para dar textura ao ar (sem escurecer)
+local atmosphere = Instance.new("Atmosphere")
+atmosphere.Name = "HalloweenAtmosphere"
+atmosphere.Density = 0.12 -- Muito leve para não tapar a visão
+atmosphere.Offset = 0.1
+atmosphere.Color = Color3.fromRGB(50, 65, 90)
+atmosphere.Decay = Color3.fromRGB(25, 30, 45)
+atmosphere.Parent = Lighting
+
+print("✨ Atmosfera de Halloween clara e de alta qualidade aplicada com sucesso!")
